@@ -43,5 +43,5 @@ app.post('/', (req, res) => {
 	})
 
 })
-
-app.listen(4000)
+const port = process.env.PORT
+app.listen(port || '0.0.0.0')
