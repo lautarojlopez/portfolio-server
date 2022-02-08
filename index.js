@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
 		from: email,
 		to: process.env.MI_EMAIL,
 		subject: asunto,
-		text: `${mensaje} - ${nombre}`
+		text: `De: ${nombre} - (${email})\n${mensaje}`
 	}
 
 	transporter.sendMail(options, (error, info) => {
