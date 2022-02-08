@@ -29,15 +29,15 @@ app.post('/', (req, res) => {
 	transporter.sendMail(options, (error, info) => {
 		if(error){
 			console.log(error);
-			res.json({
+			return res.status(500).json({
 				title: "Error al enviar el mensaje",
 				msg: "Intentalo nuevamente"
 			})
 		}
 		else{
-			res.status(200).json({
+			return res.status(200).json({
 				title: "Mensaje enviado",
-				msg: "¡Gracias por ponerte en contacto conmigo!"
+				msg: "¡Gracias por ponerte en contacto conmigo!\nTe responderé a la brevedad"
 			})
 		}
 	})
